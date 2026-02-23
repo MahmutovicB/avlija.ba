@@ -116,6 +116,17 @@ function FloatingOrbs() {
 }
 
 export default function HeroScene() {
+    // Gracefully bail out if WebGL is not available
+    try {
+        const canvas = document.createElement("canvas");
+        const gl =
+            canvas.getContext("webgl") ||
+            canvas.getContext("experimental-webgl");
+        if (!gl) return null;
+    } catch {
+        return null;
+    }
+
     return (
         <Canvas
             camera={{ position: [0, 0, 6], fov: 60 }}

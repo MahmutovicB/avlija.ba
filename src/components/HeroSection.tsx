@@ -14,17 +14,17 @@ const HeroScene = dynamic(() => import("./HeroScene"), {
 // Deterministic pseudo-random to avoid hydration mismatch
 function seededRandom(seed: number): number {
     const x = Math.sin(seed * 9301 + 49297) * 49297;
-    return x - Math.floor(x);
+    return Math.round((x - Math.floor(x)) * 10000) / 10000;
 }
 
 const particles = Array.from({ length: 20 }, (_, i) => ({
     left: `${seededRandom(i * 7 + 1) * 100}%`,
     top: `${seededRandom(i * 7 + 2) * 100}%`,
     animationDelay: `${seededRandom(i * 7 + 3) * 5}s`,
-    animationDuration: `${4 + seededRandom(i * 7 + 4) * 6}s`,
-    width: `${4 + seededRandom(i * 7 + 5) * 8}px`,
-    height: `${4 + seededRandom(i * 7 + 6) * 8}px`,
-    opacity: 0.2 + seededRandom(i * 7 + 7) * 0.3,
+    animationDuration: `${(4 + seededRandom(i * 7 + 4) * 6).toFixed(4)}s`,
+    width: `${(4 + seededRandom(i * 7 + 5) * 8).toFixed(4)}px`,
+    height: `${(4 + seededRandom(i * 7 + 6) * 8).toFixed(4)}px`,
+    opacity: Math.round((0.2 + seededRandom(i * 7 + 7) * 0.3) * 10000) / 10000,
 }));
 
 export default function HeroSection() {
