@@ -1,0 +1,145 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(150deg, #0a1a04 0%, #1a2e0a 40%, #0d2106 100%);
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(126, 170, 52, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+    z-index: 1;
+}
+
+/* CSS fallback particles */
+.fallbackParticles {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background: var(--color-primary);
+    border-radius: 50%;
+    animation: floatParticle ease-in-out infinite;
+}
+
+@keyframes floatParticle {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    33% {
+        transform: translateY(-20px) translateX(10px);
+    }
+
+    66% {
+        transform: translateY(10px) translateX(-15px);
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 0 24px;
+    max-width: 800px;
+}
+
+.logoWrapper {
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.logoWrapper img {
+    filter: drop-shadow(0 0 30px rgba(126, 170, 52, 0.3));
+}
+
+.title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.highlight {
+    color: var(--color-primary-light);
+    font-style: italic;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: var(--color-text-on-dark);
+    opacity: 0.85;
+    margin-bottom: 40px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.scrollIndicator {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    opacity: 0.6;
+    cursor: pointer;
+    animation: bounce 2s ease-in-out infinite;
+    transition: opacity var(--transition-fast);
+}
+
+.scrollIndicator:hover {
+    opacity: 1;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .logoWrapper img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}

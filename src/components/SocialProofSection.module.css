@@ -1,0 +1,111 @@
+.socialProof {
+    background: var(--color-bg-dark);
+    color: var(--color-text-light);
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 80px;
+}
+
+.statCard {
+    text-align: center;
+    padding: 32px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+}
+
+.statCard:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.statValue {
+    font-family: var(--font-heading), serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-primary-light);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.statLabel {
+    font-size: 0.9rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.7;
+}
+
+.testimonialsTitle {
+    color: var(--color-text-light) !important;
+    margin-bottom: 48px;
+}
+
+.testimonialGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.testimonialCard {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: 32px;
+    position: relative;
+}
+
+.quoteIcon {
+    color: var(--color-primary-light);
+    opacity: 0.5;
+    margin-bottom: 16px;
+}
+
+.testimonialText {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-on-dark);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.testimonialAuthor {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.testimonialAuthor strong {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}
+
+.testimonialAuthor span {
+    color: var(--color-primary-light);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 1024px) {
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-bottom: 60px;
+    }
+
+    .statValue {
+        font-size: 2.2rem;
+    }
+
+    .testimonialGrid {
+        grid-template-columns: 1fr;
+    }
+}

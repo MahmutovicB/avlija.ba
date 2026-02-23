@@ -1,0 +1,172 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 16px 0;
+    transition: all var(--transition-base);
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    padding: 10px 0;
+}
+
+.inner {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    z-index: 1001;
+}
+
+.logoText {
+    font-family: var(--font-heading), serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+    transition: color var(--transition-base);
+}
+
+.scrolled .logoText {
+    color: var(--color-text);
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+}
+
+.links a {
+    font-family: var(--font-body), sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    position: relative;
+}
+
+.links a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width var(--transition-base);
+}
+
+.links a:hover::after {
+    width: 100%;
+}
+
+.scrolled .links a {
+    color: var(--color-text);
+}
+
+.scrolled .links a:hover {
+    color: var(--color-primary);
+}
+
+.phoneDesktop {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body), sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.scrolled .phoneDesktop {
+    color: var(--color-primary);
+}
+
+.phoneMobile {
+    display: none;
+}
+
+.phoneLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    cursor: pointer;
+    z-index: 1001;
+    padding: 4px;
+}
+
+.scrolled .hamburger {
+    color: var(--color-text);
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+    .phoneDesktop {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--color-bg-dark);
+        flex-direction: column;
+        justify-content: center;
+        gap: 28px;
+        transform: translateX(100%);
+        transition: transform var(--transition-slow);
+        z-index: 1000;
+    }
+
+    .links.open {
+        transform: translateX(0);
+    }
+
+    .links a {
+        font-size: 1.5rem;
+        color: var(--color-text-light) !important;
+    }
+
+    .phoneMobile {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .phoneMobile a {
+        font-size: 1.1rem !important;
+        color: var(--color-primary-light) !important;
+    }
+}

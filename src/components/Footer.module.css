@@ -1,0 +1,122 @@
+.footer {
+    background: var(--color-bg-dark);
+    color: var(--color-text-on-dark);
+    padding-top: 60px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+/* Brand */
+.brand {
+    max-width: 320px;
+}
+
+.logoRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.logoText {
+    font-family: var(--font-heading), serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+}
+
+.tagline {
+    font-size: 0.95rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.7;
+    line-height: 1.6;
+}
+
+/* Links */
+.links h4,
+.contactInfo h4 {
+    font-family: var(--font-body), sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary-light);
+    margin-bottom: 20px;
+}
+
+.links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.links a {
+    color: var(--color-text-on-dark);
+    font-size: 0.95rem;
+    opacity: 0.8;
+    transition: all var(--transition-fast);
+}
+
+.links a:hover {
+    color: var(--color-primary-light);
+    opacity: 1;
+}
+
+/* Contact */
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: var(--color-primary-light);
+}
+
+.contactItem a,
+.contactItem span {
+    color: var(--color-text-on-dark);
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.contactItem a:hover {
+    color: var(--color-primary-light);
+    opacity: 1;
+}
+
+/* Bottom */
+.bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px 0;
+}
+
+.bottom p {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+
+    .brand {
+        max-width: 100%;
+    }
+
+    .logoRow {
+        justify-content: center;
+    }
+
+    .contactItem {
+        justify-content: center;
+    }
+}
