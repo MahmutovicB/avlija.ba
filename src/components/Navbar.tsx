@@ -35,7 +35,9 @@ export default function Navbar() {
         <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
             <div className={styles.inner}>
                 <a href="#hero" className={styles.logo} onClick={() => handleNavClick("#hero")}>
-                    <Image src="/logo.svg" alt="Avlija.ba" width={100} height={100} />
+                    <div className={styles.logoImage}>
+                        <Image src="/logo.svg" alt="Avlija.ba" fill style={{ objectFit: "cover" }} />
+                    </div>
                     {/* <span className={styles.logoText}>avlija.ba</span> */}
                 </a>
 

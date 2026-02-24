@@ -34,6 +34,13 @@
     z-index: 1001;
 }
 
+.logoImage {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    overflow: hidden;
+}
+
 .logoText {
     font-family: var(--font-heading), serif;
     font-size: 1.5rem;
